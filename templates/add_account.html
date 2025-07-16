@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="POST">
+    <div class="mb-2">
+        <input name="cliente" placeholder="Nombre del cliente" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input name="plataforma" placeholder="Plataforma (Netflix, etc)" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input type="date" name="fecha_inicio" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input type="date" name="fecha_fin" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input name="usuario" placeholder="Usuario" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input name="password" placeholder="Contraseña" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input name="status" placeholder="Estado (activo, etc)" class="form-control">
+    </div>
+    <div class="mb-2">
+        <input name="proveedor" placeholder="Proveedor" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success w-100">Guardar</button>
+</form>
+{% endblock %}

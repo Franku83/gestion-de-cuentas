@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h5>Editar Cuenta</h5>
+<form method="POST">
+    <div class="mb-2">
+        <input name="cliente" value="{{ cuenta.cliente }}" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input name="plataforma" value="{{ cuenta.plataforma }}" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input type="date" name="fecha_inicio" value="{{ cuenta.fecha_inicio }}" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input type="date" name="fecha_fin" value="{{ cuenta.fecha_fin }}" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input name="usuario" value="{{ cuenta.usuario }}" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input name="password" value="{{ cuenta.password }}" class="form-control" required>
+    </div>
+    <div class="mb-2">
+        <input name="status" value="{{ cuenta.status }}" class="form-control">
+    </div>
+    <div class="mb-2">
+        <input name="proveedor" value="{{ cuenta.proveedor }}" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-success w-100">Actualizar</button>
+</form>
+{% endblock %}

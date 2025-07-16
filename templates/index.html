@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{{ url_for('agregar') }}" class="btn btn-primary mb-3">Agregar Cuenta</a>
+<a href="{{ url_for('vencen_hoy') }}" class="btn btn-warning mb-3">Vencen Hoy</a>
+
+<table class="table table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Cliente</th>
+            <th>Plataforma</th>
+            <th>Usuario</th>
+            <th>Contraseña</th>
+            <th>Fin</th>
+            <th>Estado</th>
+            <th>Proveedor</th>
+            <th>Mensaje</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for c in cuentas %}
+        <tr>
+            <td>{{ c.cliente }}</td>
+            <td>{{ c.plataforma }}</td>
+            <td>{{ c.usuario }}</td>
+            <td>{{ c.password }}</td>
+            <td>{{ c.fecha_fin }}</td>
+            <td>{{ c.status }}</td>
+            <td>{{ c.proveedor }}</td>
+            <td><textarea class="form-control" rows="2">{{ c.mensaje_personalizado() }}</textarea></td>
+            <td>
+                <a href="{{ url_for('editar', id=c.id) }}" class="btn btn-sm btn-info mb-1">Modificar</a>
+                <a href="{{ url_for('eliminar', id=c.id) }}" class="btn btn-sm btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
